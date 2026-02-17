@@ -1,0 +1,30 @@
+export var SuccessMessages;
+(function (SuccessMessages) {
+    SuccessMessages["LOGIN_SUCCESS"] = "Login successful";
+    SuccessMessages["REGISTER_SUCCESS"] = "Registration successful";
+    SuccessMessages["OTP_SENT"] = "OTP sent successfully";
+    SuccessMessages["PASSWORD_RESET_SUCCESS"] = "Password reset successful";
+    SuccessMessages["UPLOAD_SUCCESS"] = "Images uploaded successfully";
+    SuccessMessages["UPDATE_SUCCESS"] = "Item updated successfully";
+    SuccessMessages["DELETE_SUCCESS"] = "Item deleted successfully";
+    SuccessMessages["ORDER_SAVED"] = "Order saved successfully";
+    SuccessMessages["OTP_VERIFIED"] = "OTP verified successfully";
+    SuccessMessages["OTP_RESENT"] = "OTP resent successfully";
+})(SuccessMessages || (SuccessMessages = {}));
+export var ErrorMessages;
+(function (ErrorMessages) {
+    ErrorMessages["INVALID_CREDENTIALS"] = "Invalid email or password";
+    ErrorMessages["VERIFY_EMAIL"] = "Please verify your email first";
+    ErrorMessages["USER_EXISTS"] = "User already exists";
+    ErrorMessages["USER_NOT_FOUND"] = "User not found";
+    ErrorMessages["AUTH_FAILED"] = "Authentication failed";
+    ErrorMessages["UNAUTHORIZED"] = "Unauthorized access";
+    ErrorMessages["INVALID_OTP"] = "Invalid or expired OTP";
+    ErrorMessages["UPLOAD_FAILED"] = "Upload failed";
+    ErrorMessages["FETCH_FAILED"] = "Failed to fetch items";
+    ErrorMessages["UPDATE_FAILED"] = "Update failed";
+    ErrorMessages["DELETE_FAILED"] = "Delete failed";
+    ErrorMessages["ITEM_NOT_FOUND"] = "Item not found";
+    ErrorMessages["INTERNAL_SERVER_ERROR"] = "Internal server error";
+    ErrorMessages["NO_FILES"] = "No files uploaded";
+})(ErrorMessages || (ErrorMessages = {}));
