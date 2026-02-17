@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import { IGalleryItem } from "interfaces/schema/IGallery";
+import { IGalleryItem } from "../interfaces/schema/IGallery";
 
 const GallerySchema: Schema = new Schema({
   userId: { type: Schema.Types.ObjectId, ref: "User", required: true },

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IUser } from "interfaces/schema/IUser";
+import { IUser } from "../interfaces/schema/IUser";
 import { IUserRepository } from "../interfaces/repository/IUserRepository";
 import User from "../models/User";
 

@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IGalleryItem } from "interfaces/schema/IGallery";
+import { IGalleryItem } from "../interfaces/schema/IGallery";
 import { IGalleryRepository } from "../interfaces/repository/IGalleryRepository";
 import Gallery from "../models/Gallery";
 

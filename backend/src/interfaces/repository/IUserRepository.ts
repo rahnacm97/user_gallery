@@ -1,4 +1,4 @@
-import { IUser } from "interfaces/schema/IUser";
+import { IUser } from "../../interfaces/schema/IUser";
 import { IBaseRepository } from "./IBaseRepository";
 
 export interface IUserRepository extends IBaseRepository<IUser> {
