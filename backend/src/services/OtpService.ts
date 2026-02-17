@@ -4,7 +4,7 @@ import { IOtpRepository } from "../interfaces/repository/IOtpRepository";
 import { ApiError } from "../shared/utils/ApiError";
 import { HttpStatus } from "../shared/constants/httpStatus";
 import { logger } from "../shared/utils/logger";
-import { ErrorMessages } from "shared/constants/messages";
+import { ErrorMessages } from "../shared/constants/messages";
 
 export class OtpService implements IOtpService {
   constructor(

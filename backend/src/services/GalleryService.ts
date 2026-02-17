@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { IGalleryRepository } from "../interfaces/repository/IGalleryRepository";
-import { IGalleryItem } from "interfaces/schema/IGallery";
+import { IGalleryItem } from "../interfaces/schema/IGallery";
 import { ApiError } from "../shared/utils/ApiError";
 import { HttpStatus } from "../shared/constants/httpStatus";
 import { ErrorMessages } from "../shared/constants/messages";

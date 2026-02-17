@@ -1,5 +1,5 @@
 import { IUserRepository } from "../interfaces/repository/IUserRepository";
-import { IUser } from "interfaces/schema/IUser";
+import { IUser } from "../interfaces/schema/IUser";
 import { ApiError } from "../shared/utils/ApiError";
 import { HttpStatus } from "../shared/constants/httpStatus";
 import { ErrorMessages } from "../shared/constants/messages";

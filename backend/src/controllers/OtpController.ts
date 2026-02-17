@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { IOtpController } from "../interfaces/controller/IOtpController";
 import { IOtpService } from "../interfaces/services/IOtpService";
 import { HttpStatus } from "../shared/constants/httpStatus";
-import { SuccessMessages } from "shared/constants/messages";
+import { SuccessMessages } from "../shared/constants/messages";
 
 export class OtpController implements IOtpController {
   constructor(private _otpService: IOtpService) {}
