@@ -7,12 +7,12 @@ export const FRONTEND_ROUTES = {
 } as const;
 
 export const API_ROUTES = {
-  AUTH_LOGIN: '/auth/login',
-  AUTH_REGISTER: '/auth/register',
-  AUTH_FORGOT_PASSWORD: '/auth/forgot-password',
-  AUTH_RESET_PASSWORD: '/auth/reset-password',
-  GALLERY: '/gallery',
-  GALLERY_UPLOAD: '/gallery/upload',
-  GALLERY_REORDER: '/gallery/reorder',
+  AUTH_LOGIN: '/api/auth/login',
+  AUTH_REGISTER: '/api/auth/register',
+  AUTH_FORGOT_PASSWORD: '/api/auth/forgot-password',
+  AUTH_RESET_PASSWORD: '/api/auth/reset-password',
+  GALLERY: '/api/gallery',
+  GALLERY_UPLOAD: '/api/gallery/upload',
+  GALLERY_REORDER: '/api/gallery/reorder',
 } as const;
 
