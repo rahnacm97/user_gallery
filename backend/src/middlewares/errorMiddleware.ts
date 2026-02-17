@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from "express";
 import { ApiError } from "../shared/utils/ApiError";
 import { HttpStatus } from "../shared/constants/httpStatus";
 import { ErrorMessages } from "../shared/constants/messages";
@@ -8,6 +8,7 @@ export const errorHandler = (
   err: Error | ApiError,
   req: Request,
   res: Response,
+  next: NextFunction,
 ) => {
   let statusCode = HttpStatus.INTERNAL_SERVER_ERROR;
   let message = ErrorMessages.INTERNAL_SERVER_ERROR as string;
