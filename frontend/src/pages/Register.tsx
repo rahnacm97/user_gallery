@@ -110,7 +110,7 @@ const Register: React.FC = () => {
   };
 
   const handleVerifyOtp = async (otpValue: string) => {
-    await api.post("/auth/verify-otp", {
+    await api.post(API_ROUTES.AUTH_VERIFY_OTP, {
       email: formData.email,
       otp: otpValue,
       purpose: "signup",
@@ -119,7 +119,7 @@ const Register: React.FC = () => {
   };
 
   const handleResendOtp = async () => {
-    await api.post("/auth/resend-otp", {
+    await api.post(API_ROUTES.AUTH_RESEND_OTP, {
       email: formData.email,
       purpose: "signup",
     });

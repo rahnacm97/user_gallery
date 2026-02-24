@@ -52,7 +52,7 @@ const ForgotPassword: React.FC = () => {
   };
 
   const handleVerifyOtp = async (otpValue: string) => {
-    await api.post("/auth/verify-otp", {
+    await api.post(API_ROUTES.AUTH_VERIFY_OTP, {
       email,
       otp: otpValue,
       purpose: "forgot-password",
@@ -63,7 +63,7 @@ const ForgotPassword: React.FC = () => {
   };
 
   const handleResendOtp = async () => {
-    await api.post("/auth/resend-otp", {
+    await api.post(API_ROUTES.AUTH_RESEND_OTP, {
       email,
       purpose: "forgot-password",
     });
