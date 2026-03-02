@@ -17,11 +17,17 @@ export class NodemailerConfig {
     this._transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
       port: 587,
-      secure: false,
+      secure: false, 
       auth: {
         user: user,
         pass: pass,
       },
+      connectionTimeout: 10000, 
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
+      tls: {
+        rejectUnauthorized: false 
+      }
     });
   }
 
