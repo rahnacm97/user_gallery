@@ -23,21 +23,49 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   return user ? <>{children}</> : <Navigate to={FRONTEND_ROUTES.LOGIN} />;
 };
 
+const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const { user, loading } = useAuth();
+  if (loading) return <div>Loading...</div>;
+  return user ? <Navigate to={FRONTEND_ROUTES.ROOT} /> : <>{children}</>;
+};
+
 function App() {
   return (
     <AuthProvider>
       <Toaster position="top-right" reverseOrder={false} />
       <Router>
         <Routes>
-          <Route path={FRONTEND_ROUTES.LOGIN} element={<Login />} />
-          <Route path={FRONTEND_ROUTES.REGISTER} element={<Register />} />
+          <Route
+            path={FRONTEND_ROUTES.LOGIN}
+            element={
+              <PublicRoute>
+                <Login />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path={FRONTEND_ROUTES.REGISTER}
+            element={
+              <PublicRoute>
+                <Register />
+              </PublicRoute>
+            }
+          />
           <Route
             path={FRONTEND_ROUTES.FORGOT_PASSWORD}
-            element={<ForgotPassword />}
+            element={
+              <PublicRoute>
+                <ForgotPassword />
+              </PublicRoute>
+            }
           />
           <Route
             path={FRONTEND_ROUTES.RESET_PASSWORD}
-            element={<ResetPassword />}
+            element={
+              <PublicRoute>
+                <ResetPassword />
+              </PublicRoute>
+            }
           />
           <Route
             path={FRONTEND_ROUTES.ROOT}
