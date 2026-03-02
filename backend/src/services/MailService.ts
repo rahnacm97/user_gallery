@@ -11,7 +11,7 @@ export class MailService implements IMailService {
     try {
       if (!this._nodemailerConfig.emailUser) {
         logger.warn(
-          "Email credentials not found in .env. Skipping email sending. Check console for OTP.",
+          "Email credentials (EMAIL_USER) not found. Skipping email sending. OTP is: " + otp,
         );
         return;
       }
@@ -26,10 +26,11 @@ export class MailService implements IMailService {
         html: otpTemplate.getHtml(otp),
       };
 
+      logger.info(`Attempting to send OTP email to ${email}...`);
       await this._nodemailerConfig.transporter.sendMail(mailOptions);
       logger.info(`OTP email sent successfully to ${email}`);
     } catch (error) {
-      logger.error("Failed to send OTP email:", error);
+      logger.error(`Failed to send OTP email to ${email}:`, error);
     }
   }
 }

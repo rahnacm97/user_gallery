@@ -7,11 +7,20 @@ export class NodemailerConfig {
   private _transporter: Transporter;
 
   constructor() {
+    const user = process.env.EMAIL_USER;
+    const pass = process.env.EMAIL_PASS;
+
+    if (!user || !pass) {
+      console.warn("EMAIL_USER or EMAIL_PASS environment variables are missing.");
+    }
+
     this._transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true, 
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: user,
+        pass: pass,
       },
     });
   }
@@ -21,6 +30,6 @@ export class NodemailerConfig {
   }
 
   get emailUser(): string | undefined {
-      return process.env.EMAIL_USER;
+    return process.env.EMAIL_USER;
   }
 }
