@@ -26,4 +26,5 @@ export enum ErrorMessages {
   ITEM_NOT_FOUND = "Item not found",
   INTERNAL_SERVER_ERROR = "Internal server error",
   NO_FILES = "No files uploaded",
+  INVALID_FILE_TYPE = "Only JPEG and PNG images are allowed",
 }

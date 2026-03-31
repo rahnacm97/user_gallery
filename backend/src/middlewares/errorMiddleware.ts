@@ -17,7 +17,12 @@ export const errorHandler = (
     statusCode = err.statusCode;
     message = err.message;
   } else if (err instanceof Error) {
-    message = err.message;
+    if (err.message === "INVALID_FILE_TYPE") {
+      statusCode = HttpStatus.BAD_REQUEST;
+      message = ErrorMessages.INVALID_FILE_TYPE;
+    } else {
+      message = err.message;
+    }
   }
 
   logger.error(`[Error] ${statusCode} - ${message}`);

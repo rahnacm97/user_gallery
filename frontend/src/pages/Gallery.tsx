@@ -65,6 +65,17 @@ const Gallery: React.FC = () => {
     const files = e.target.files;
     if (!files || files.length === 0) return;
 
+    const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+    const invalidFiles = Array.from(files).filter(
+      (file) => !allowedTypes.includes(file.type),
+    );
+
+    if (invalidFiles.length > 0) {
+      toast.error("Only JPEG and PNG images are allowed");
+      e.target.value = "";
+      return;
+    }
+
     const newFiles = Array.from(files).map((file) => ({
       file,
       title: file.name.split(".")[0],
@@ -137,6 +148,11 @@ const Gallery: React.FC = () => {
     const formData = new FormData();
     formData.append("title", title);
     if (file) {
+      const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
+      if (!allowedTypes.includes(file.type)) {
+        toast.error("Only JPEG and PNG images are allowed");
+        return;
+      }
       formData.append("image", file);
     }
 
